@@ -5,29 +5,27 @@ const cors = require("cors");
 const app = express();
 
 var corsOptions = {
-	origin: "http://bwwhox6curb6ds4xs2hf-mysql.services.clever-cloud.com"
+  origin: "http://localhost:8081"
 };
 
 app.use(cors(corsOptions));
 
-// parse requests of content-type-application/json
+// parse requests of content-type - application/json
 app.use(bodyParser.json());
 
-// Parse requests of content-type - application/ x-www-form-urlencoded
-app.use(bodyParser.urlencoded({extended: true}));
+// parse requests of content-type - application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// Simple route
+// simple route
 app.get("/", (req, res) => {
-	res.json({message: "Welcome to Camryns APP."});
+  res.json({ message: "Welcome to bezkoder application." });
 });
 
-// Set port, listen for requests
+// set port, listen for requests
 const PORT = process.env.PORT || 8080;
-
-app.listen(PORT, () =>{
-	console.log(`Server is running on port ${PORT}.`);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
 });
-
 
 
 
